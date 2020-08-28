@@ -1,74 +1,18 @@
 ## Data Modeling - Sparkify Postgres ETL
 
-This project extracts, transforms and loads data from the Sparkify app (an app to listen to your favorite musics) logs to create a tables in a relational database:
- - `users`
- - `songs`
- - `artists`
- - `songplays`
- - `time` 
- 
-With this structured database, we can extract meaningful insights from user habits of listening to music and learn hidden patterns inside this 
-large quantity of data. 
+An imaginery startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. Currently, they don't have an easy way to query their data, which resides in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
+
+In this project, we'll create a Postgres database with tables designed to optimize queries on song play analysis. The task is to create a star schema for Postgres and develop an ETL pipleine which will transfer the data from local files to the database.
+
+### Requirements for running locally
+- Python3 
+- Jupiter notebook
 
 ### Database Schema Design
 
 Below is the database schema for the Sparkify databse:
 
-#### Song play table
-
-- Name: `songplays`
-- Type: Fact table
-  * songplay_id
-  * start_time
-  * user_id
-  * level
-  * song_id
-  * artist_id
-  * session_id
-  * location
-  * user_agent
-
-#### Users table
-
-- Name: `users`
-- Type: Dimension table
-  * user_id
-  * first_name
-  * last_name
-  * gender
-  * level
-  
-#### Songs table
-
-- Name: `songs`
-- Type: Dimension table
-  * song_id
-  * title
-  * artist_id
-  * year
-  * duration
-
-#### Artists table
-
-- Name: `artists`
-- Type: Dimension table
-  * artist_id
-  * name
-  * location
-  * latitude
-  * longitude
-
-#### Time table
-
-- Name: `time`
-- Type: Dimension table
-  * start_time
-  * hour
-  * day
-  * week
-  * month
-  * year
-  * weekday
+![Screenshot](img1.png)
 
 ### The project file structure
 
